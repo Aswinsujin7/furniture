@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verona Atelier | Handcrafted Luxury Furniture & Modern Home Living</title>
+  <meta name="description" content="Discover premium handcrafted solid wood beds, modular sofas, luxury dining sets, ergonomic chairs, and architectural home furniture inspired by Italian elegance." />
+  <meta name="keywords" content="luxury furniture, modern bed, solid wood king bed, sofa set, dining table, ergonomic chair, wardrobe, verona atelier" />
+  <meta name="author" content="Verona Atelier" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Verona Atelier | Handcrafted Luxury Furniture" />
+  <meta property="og:description" content="Artisanal solid wood and contemporary upholstered pieces crafted to elevate your sanctuary." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141210'/><text x='50' y='68' font-family='serif' font-size='60' font-weight='bold' fill='%23B88E4F' text-anchor='middle'>V</text></svg>" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="announcement-bar" aria-label="Special Offers">
+    <div class="announcement-content">
+      <span class="announcement-pill">Atelier Privilege</span>
+      <span class="announcement-item">
+        Complimentary <strong>White-Glove Delivery & Assembly</strong> Across India
+      </span>
+      <span style="opacity: 0.5;">•</span>
+      <span class="announcement-item">10-Year Structural Warranty on all Solid Teak & Sheesham</span>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn action-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Brand Wordmark & Emblem -->
+        <a href="#home" class="brand-logo" aria-label="Verona Atelier Home">
+          <div class="brand-emblem">V</div>
+          <div class="brand-text">
+            <span class="brand-name">VERONA</span>
+            <span class="brand-tagline">ATELIER • FURNITURE</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#category/sofas/all" class="nav-link" data-cat="sofas">Living Room</a>
+          <a href="#category/beds/all" class="nav-link" data-cat="beds">Bedroom</a>
+          <a href="#category/dining/all" class="nav-link" data-cat="dining">Dining Room</a>
+          <a href="#category/office/all" class="nav-link" data-cat="office">Office</a>
+          <a href="#category/tables/all" class="nav-link" data-cat="tables">Tables</a>
+          <a href="#category/wardrobes/all" class="nav-link" data-cat="wardrobes">Wardrobes</a>
+          <a href="#contactModal" class="nav-link badge-pill" onclick="event.preventDefault(); document.getElementById('contactSection').scrollIntoView({behavior: 'smooth'});">
+            Showroom Concierge
+          </a>
+        </nav>
+
+        <!-- Header Actions: Search and Mobile Menu -->
+        <div class="header-actions">
+          
+          <!-- Search Trigger -->
+          <button class="action-btn" data-search-trigger title="Search Collection (Press /)" aria-label="Search Furniture">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE DRAWER MENU
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="mobileMenuBackdrop"></div>
+  <aside class="drawer-panel" id="mobileMenuDrawer" style="left: 0; right: auto; transform: translateX(-100%);">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="brand-emblem">V</div>
+        <span class="brand-name" style="font-size: 1.3rem;">VERONA</span>
+      </div>
+      <button class="drawer-close-btn" id="mobileMenuClose" aria-label="Close Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body" style="padding: 1.5rem;">
+      <h5 class="section-label">Browse Showroom Rooms</h5>
+      <nav style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+        <a href="#home" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Home</a>
+        <a href="#category/sofas/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Sofas & Lounges</a>
+        <a href="#category/beds/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Beds & Suites</a>
+        <a href="#category/dining/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Dining Sets</a>
+        <a href="#category/chairs/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Chairs & Recliners</a>
+        <a href="#category/tables/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Tables & Desks</a>
+        <a href="#category/wardrobes/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Wardrobes & Storage</a>
+        <a href="#category/office/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Office Furniture</a>
+        <a href="#category/mattress/all" class="mobile-drawer-link" style="font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);">Orthopedic Mattresses</a>
+      </nav>
+
+      <div style="background: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-md);">
+        <span class="section-label" style="margin-bottom: 0.3rem;">Concierge Desk</span>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Need interior advice or custom dimensions? Speak with our showroom architects.</p>
+        <a href="tel:18002008899" class="btn-primary" style="width: 100%; font-size: 0.82rem; padding: 0.6rem;">Call Concierge (Toll Free)</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main id="mainApp">
+
+    <!-- ======================================================================
+         VIEW 1: HOME PAGE
+         ====================================================================== -->
+    <div id="homeView">
+      
+      <!-- HERO SHOWROOM SECTION -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-card">
+            <div class="hero-image-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=85" 
+                alt="Verona Atelier Luxury Living Room Showcase" 
+                class="hero-bg-img"
+              />
+              <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content">
+              <span class="hero-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                Artisanal Living 2026 Collection
+              </span>
+              
+              <h1 class="hero-title">Crafted Comfort for Refined Living</h1>
+              
+              <p class="hero-subtitle">
+                Discover bespoke solid teak beds, cloud-soft modular sectionals, and hand-sculpted dining suites built to last generations.
+              </p>
+
+              <div class="hero-cta-group">
+                <a href="#category/beds/all" class="btn-primary">
+                  Explore Beds Collection
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#category/sofas/all" class="btn-secondary">
+                  Browse Living Room
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Badges Bar -->
+          <div class="trust-bar">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-label">10-Year Warranty</div>
+                <div class="trust-sub">Structural timber guarantee</div>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-label">White-Glove Delivery</div>
+                <div class="trust-sub">Free transit & room assembly</div>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-label">Solid Grade-A Timber</div>
+                <div class="trust-sub">Kiln-seasoned Teak & Sheesham</div>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="trust-label">0% EMI Available</div>
+                <div class="trust-sub">Flexible monthly payments</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CATEGORY SHOWCASE SECTION -->
+      <section class="categories-section" id="categoriesSection">
+        <div class="container">
+          
+          <div class="section-header">
+            <div>
+              <span class="section-label">Curated Collections</span>
+              <h2 class="section-title">Explore by Furniture Category</h2>
+              <p class="section-desc">Each piece is thoughtfully proportioned and built to create harmony in contemporary Indian homes.</p>
+            </div>
+          </div>
+
+          <!-- 8 Furniture Categories Grid -->
+          <div class="category-grid" id="homeCategoryGrid">
+            <!-- Dynamically populated from CATEGORIES data in products.js -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ARTISANAL SHOWROOM STORY / FEATURE HIGHLIGHT -->
+      <section style="background: var(--bg-secondary); padding: 5rem 0;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;" class="editorial-grid">
+            <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
+              <img 
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80" 
+                alt="Woodworking Craftsmanship" 
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+            <div>
+              <span class="section-label">The Verona Atelier Standard</span>
+              <h2 class="section-title">Where Master Craftsmanship Meets Timeless Living</h2>
+              <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+                Unlike mass-produced flat-pack units, every Verona furniture piece originates from ethically sourced, seasoned hardwoods. 
+                Our artisans spend up to 45 hours hand-shaping, carving, and oil-rubbing every curve to preserve the wood’s natural grain character.
+              </p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem;">
+                <div>
+                  <h4 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--accent-gold-hover);">100%</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Kiln-Dried Hardwood</p>
+                </div>
+                <div>
+                  <h4 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--accent-gold-hover);">50,000+</h4>
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Homes Elevated</p>
+                </div>
+              </div>
+              <a href="#category/beds/all" class="btn-primary">Explore Handcrafted Beds</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================================
+         VIEW 2: CATALOG / CATEGORY PAGE (REUSABLE FLOW)
+         ====================================================================== -->
+    <div id="catalogView" class="catalog-view">
+      <div class="container">
+        
+        <!-- Breadcrumbs Navigation -->
+        <nav class="breadcrumbs" id="catalogBreadcrumbs" aria-label="Breadcrumb"></nav>
+
+        <!-- Category Hero Banner with Curated Photo -->
+        <div class="category-hero-banner" id="catalogHeroBanner">
+          <img src="" alt="" class="cat-banner-bg" id="catalogBannerImg" />
+          <div class="cat-banner-content">
+            <h1 class="cat-banner-title" id="catalogTitle">BEDS</h1>
+            <p class="cat-banner-desc" id="catalogDesc">Explore handcrafted solid wood king beds, modern upholstered headboards, and hydraulic storage beds.</p>
+          </div>
+        </div>
+
+        <!-- Subcategories Filter Pills Bar -->
+        <div class="subcategories-bar">
+          <div class="subcategories-list" id="subcategoriesList">
+            <!-- Dynamically populated e.g. All Beds, King Size, Queen Size, Storage Beds, etc. -->
+          </div>
+        </div>
+
+        <!-- Secondary Toolbar: Filters, Product Count, and Sorting -->
+        <div class="toolbar-bar">
+          <div class="toolbar-left">
+            <span class="product-count-badge" id="catalogProductCount">Showing 0 Designs</span>
+            
+            <!-- Price Bracket Filter -->
+            <select class="filter-select" id="priceFilterSelect" aria-label="Filter by Price">
+              <option value="all">Price: All Ranges</option>
+              <option value="under-30k">Under ₹30,000</option>
+              <option value="30k-50k">₹30,000 - ₹50,000</option>
+              <option value="above-50k">Above ₹50,000</option>
+            </select>
+
+            <!-- Material Filter -->
+            <select class="filter-select" id="materialFilterSelect" aria-label="Filter by Material">
+              <option value="all">Material: All Materials</option>
+              <option value="teak">Solid Teak Wood</option>
+              <option value="sheesham">Solid Sheesham</option>
+              <option value="velvet">Luxury Velvet</option>
+              <option value="leather">Genuine Leather</option>
+              <option value="marble">Italian Marble / Stone</option>
+            </select>
+          </div>
+
+          <div class="toolbar-right">
+            <span class="sort-label">Sort by:</span>
+            <select class="filter-select" id="sortSelect" aria-label="Sort Products">
+              <option value="featured">Featured / Atelier Choice</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Customer Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Clean Product Grid (2-col mobile, 3-4 col desktop) -->
+        <div class="product-grid" id="catalogProductGrid">
+          <!-- Dynamically populated product cards -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         VIEW 3: PRODUCT DETAILS PAGE
+         ====================================================================== -->
+    <div id="productDetailsView" class="product-details-view">
+      <div class="container">
+        
+        <!-- Breadcrumbs Navigation -->
+        <nav class="breadcrumbs" id="detailBreadcrumbs" aria-label="Breadcrumb"></nav>
+
+        <!-- Product Details Grid -->
+        <div class="product-details-grid">
+          
+          <!-- LEFT: Sticky Image Gallery -->
+          <div class="product-gallery-sticky">
+            <div class="main-image-container">
+              <img src="" alt="" class="main-product-img" id="mainProductImg" />
+            </div>
+            <!-- Thumbnails Strip -->
+            <div class="thumbnails-strip" id="thumbnailsStrip">
+              <!-- Dynamically populated thumbnails -->
+            </div>
+          </div>
+
+          <!-- RIGHT: Product Specifications & Actions -->
+          <div class="product-info-column">
+            
+            <div class="detail-badge-row">
+              <div id="detailStockBadge"></div>
+            </div>
+
+            <h1 class="detail-title" id="detailTitle">Royal King Bed</h1>
+
+            <div class="detail-rating-row">
+              <span class="stars-icon" id="detailRatingStars">★★★★★</span>
+              <strong id="detailRatingScore">4.9</strong>
+              <span id="detailReviewCount">(148 Customer Reviews)</span>
+              <span style="color: var(--border-subtle); margin: 0 0.25rem;">|</span>
+              <span style="color: #2E7D32; font-weight: 500;">Verified Atelier Buyer</span>
+            </div>
+
+            <!-- Price Box -->
+            <div class="detail-price-box">
+              <div class="detail-price-row">
+                <span class="detail-price-val" id="detailPrice">₹45,000</span>
+                <span class="detail-mrp-val" id="detailOriginalPrice">₹56,000</span>
+                <span class="detail-save-badge" id="detailSaveBadge">Save ₹11,000 (20% OFF)</span>
+              </div>
+              <div class="detail-emi-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+                EMI starting from ₹2,180/month. No-Cost EMI available on major credit cards.
+              </div>
+            </div>
+
+            <!-- Color Swatches -->
+            <div class="selector-group">
+              <div class="selector-header">
+                <span class="selector-label">Colour:</span>
+                <span class="selected-val-label" id="currentColorLabel">Walnut Brown</span>
+              </div>
+              <div class="color-swatches-row" id="colorSwatchesContainer">
+                <!-- Dynamically populated color buttons -->
+              </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="selector-group">
+              <div class="selector-header">
+                <span class="selector-label">Size:</span>
+                <span class="selected-val-label" id="currentSizeLabel">King Size</span>
+              </div>
+              <div class="size-pill-row" id="sizePillsContainer">
+                <!-- Dynamically populated size buttons -->
+              </div>
+            </div>
+
+            <!-- Specification Highlights Bar -->
+            <div class="spec-highlight-grid">
+              <div class="spec-cell">
+                <span class="spec-cell-label">Material</span>
+                <span class="spec-cell-val" id="detailMaterialVal">Solid Teak Wood</span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-cell-label">Dimensions</span>
+                <span class="spec-cell-val" id="detailDimensionsVal">78 × 72 × 48 inches</span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-cell-label">Warranty</span>
+                <span class="spec-cell-val" id="detailWarrantyVal">10 Years Structural</span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-cell-label">Assembly</span>
+                <span class="spec-cell-val">Free White-Glove Included</span>
+              </div>
+            </div>
+
+            <!-- Pincode Delivery Checker -->
+            <div class="pincode-box">
+              <div class="pincode-header">Check Delivery & Installation Date</div>
+              <div class="pincode-form">
+                <input type="text" class="pincode-input" id="pincodeInput" placeholder="Enter 6-digit Pincode (e.g. 560001)" maxlength="6" />
+                <button class="pincode-btn" id="pincodeBtn">Check</button>
+              </div>
+              <div class="pincode-response" id="pincodeResponse"></div>
+            </div>
+
+
+            <!-- Expandable Information Accordions -->
+            <div class="accordion-wrap">
+              
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Product Overview & Craftsmanship</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-content open">
+                  <p id="detailDescription" style="margin-bottom: 1rem;"></p>
+                  <ul id="detailFeaturesList" style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem;"></ul>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Dimensions & Technical Specifications</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-content">
+                  <table class="specs-table" id="detailSpecsTable"></table>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Care Instructions & Maintenance</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-content">
+                  <p>• Wipe clean using a soft microfiber cloth slightly dampened with lukewarm water.</p>
+                  <p>• Avoid using harsh chemical sprays, bleach, or abrasive sponges.</p>
+                  <p>• Apply natural beeswax or teak conditioning oil once every 12 months to maintain the lustrous natural grain sheen.</p>
+                  <p>• Shield from direct excessive sunlight exposure and humid air conditioner vents.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger">
+                  <span>Delivery, Assembly & 10-Year Warranty</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="accordion-content">
+                  <p><strong>White-Glove Assembly:</strong> Our trained technician team unboxes, inspects, and installs the furniture inside your chosen room at zero additional charge.</p>
+                  <p><strong>Warranty:</strong> Covered by Verona Atelier 10-Year Structural Timber Guarantee against wood borers, structural frame defects, and hydraulic piston failures.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RELATED FURNITURE DESIGNS -->
+        <section class="related-products-section">
+          <div style="margin-bottom: 2rem;">
+            <span class="section-label">Coordinating Pieces</span>
+            <h3 style="font-size: 2rem;">You May Also Admire</h3>
+          </div>
+          <div class="product-grid" id="relatedProductsGrid"></div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- SHOWROOM CONCIERGE & CONTACT SECTION -->
+    <section id="contactSection" style="background: var(--bg-surface); padding: 4.5rem 0; border-top: 1px solid var(--border-light);">
+      <div class="container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
+          <span class="section-label">Personalized Interior Experience</span>
+          <h2 class="section-title">Visit Our Flagship Showrooms</h2>
+          <p class="section-desc" style="margin: 0 auto;">Touch the natural timber textures, test sofa ergonomics, and collaborate with our atelier design architects.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          
+          <div style="background: var(--bg-primary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Bengaluru Atelier</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+              100 Feet Road, Indiranagar, Bengaluru - 560038<br />
+              Mon - Sun: 10:30 AM – 8:30 PM
+            </p>
+            <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-hover);">+91 80 4920 8800</p>
+          </div>
+
+          <div style="background: var(--bg-primary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Mumbai Flagship</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+              Senapati Bapat Marg, Lower Parel, Mumbai - 400013<br />
+              Mon - Sun: 11:00 AM – 9:00 PM
+            </p>
+            <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-hover);">+91 22 6120 7700</p>
+          </div>
+
+          <div style="background: var(--bg-primary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Delhi NCR Pavilion</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+              MG Road, Sultanpur, New Delhi - 110030<br />
+              Mon - Sun: 10:30 AM – 8:00 PM
+            </p>
+            <p style="font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-hover);">+91 11 4050 9900</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MOBILE BOTTOM NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-nav-item active">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Home</span>
+    </a>
+
+    <a href="#category/beds/all" class="mobile-nav-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span>Categories</span>
+    </a>
+
+    <button class="mobile-nav-item" data-search-trigger>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span>Search</span>
+    </button>
+
+    <a href="#contactSection" class="mobile-nav-item" onclick="document.getElementById('contactSection').scrollIntoView({behavior: 'smooth'});">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <span>Showrooms</span>
+    </a>
+  </nav>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-emblem" style="background: #25221F; border-color: var(--accent-gold);">V</div>
+            <span class="brand-name" style="color: #FFFFFF;">VERONA</span>
+          </div>
+          <p class="footer-brand-desc">
+            Handcrafted solid wood and contemporary upholstered furniture crafted for discerning homeowners. Engineered for lifetimes of comfort.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--accent-gold-light);">
+            Concierge: <strong>+91 (080) 4920 8800</strong><br />
+            Email: <strong>atelier@veronahome.in</strong>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">By Category</h4>
+          <ul class="footer-links">
+            <li><a href="#category/sofas/all">Sofas & Sectionals</a></li>
+            <li><a href="#category/beds/all">Beds & Suites</a></li>
+            <li><a href="#category/dining/all">Dining Sets</a></li>
+            <li><a href="#category/chairs/all">Armchairs & Recliners</a></li>
+            <li><a href="#category/tables/all">Center & Coffee Tables</a></li>
+            <li><a href="#category/wardrobes/all">Modular Wardrobes</a></li>
+            <li><a href="#category/office/all">Executive Office</a></li>
+            <li><a href="#category/mattress/all">Orthopedic Mattresses</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Atelier Care</h4>
+          <ul class="footer-links">
+            <li><a href="#contactSection">Showroom Locations</a></li>
+            <li><a href="#catalogView">White-Glove Delivery Guide</a></li>
+            <li><a href="#catalogView">10-Year Warranty Policy</a></li>
+            <li><a href="#catalogView">Wood Care & Maintenance</a></li>
+            <li><a href="#catalogView">Custom Dimension Requests</a></li>
+            <li><a href="#catalogView">Architect & B2B Trade Program</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Stay Inspired</h4>
+          <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem;">
+            Join our private design newsletter for exclusive previews of seasonal wood harvests and atelier launches.
+          </p>
+          <form id="newsletterForm" style="display: flex; gap: 0.5rem;">
+            <input type="email" required placeholder="Enter your email" style="flex: 1; padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; font-size: 0.85rem;" />
+            <button type="submit" class="btn-primary" style="padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Verona Atelier Home Private Limited. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#home">Privacy Policy</a>
+          <a href="#home">Terms of Sale</a>
+          <a href="#home">Warranty Registration</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Root -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
