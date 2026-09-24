@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useShop } from "@/context/ShopContext";
-import { Search, Heart, ShoppingBag, Menu, X, PhoneCall } from "lucide-react";
+import { Search, Heart, ShoppingBag, Menu, X, PhoneCall, Home, LayoutGrid } from "lucide-react";
 import { CATEGORIES } from "@/data/products";
 
 export default function Header() {
@@ -394,6 +394,54 @@ export default function Header() {
           </div>
         </div>
       </aside>
+
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav" aria-label="Mobile Navigation">
+        <Link
+          href="/"
+          className={`mobile-nav-item ${pathname === "/" ? "active" : ""}`}
+        >
+          <Home size={18} />
+          <span>Home</span>
+        </Link>
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className={`mobile-nav-item ${pathname.startsWith("/category") ? "active" : ""}`}
+        >
+          <LayoutGrid size={18} />
+          <span>Rooms</span>
+        </button>
+        <button
+          onClick={() => setIsSearchOpen(true)}
+          className="mobile-nav-item"
+        >
+          <Search size={18} />
+          <span>Search</span>
+        </button>
+        <button
+          onClick={() => setIsWishlistOpen(true)}
+          className="mobile-nav-item"
+          style={{ position: "relative" }}
+        >
+          <Heart size={18} />
+          <span>Saved</span>
+          {wishlist.length > 0 && (
+            <span className="mobile-nav-badge">{wishlist.length}</span>
+          )}
+        </button>
+        <button
+          onClick={() => setIsCartOpen(true)}
+          className="mobile-nav-item"
+          style={{ position: "relative" }}
+        >
+          <ShoppingBag size={18} />
+          <span>Bag</span>
+          {totalCartCount > 0 && (
+            <span className="mobile-nav-badge">{totalCartCount}</span>
+          )}
+        </button>
+      </nav>
     </>
   );
 }
+

@@ -66,7 +66,7 @@ export default function CategoryPage() {
           position: "relative",
           background: "var(--bg-dark)",
           color: "#fff",
-          padding: "5rem 0 4.5rem",
+          padding: "clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 4rem)",
           overflow: "hidden",
         }}
       >
@@ -101,7 +101,8 @@ export default function CategoryPage() {
               gap: "0.5rem",
               fontSize: "0.85rem",
               color: "rgba(255, 255, 255, 0.65)",
-              marginBottom: "1.25rem",
+              marginBottom: "1rem",
+              flexWrap: "wrap",
             }}
           >
             <Link href="/" style={{ color: "rgba(255, 255, 255, 0.8)" }}>
@@ -121,7 +122,7 @@ export default function CategoryPage() {
 
           <span
             style={{
-              fontSize: "0.8rem",
+              fontSize: "0.78rem",
               textTransform: "uppercase",
               letterSpacing: "1.5px",
               color: "var(--accent-gold)",
@@ -135,9 +136,9 @@ export default function CategoryPage() {
           <h1
             style={{
               fontFamily: "var(--font-serif)",
-              fontSize: "clamp(2.5rem, 5vw, 3.8rem)",
+              fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
               fontWeight: 600,
-              marginBottom: "0.8rem",
+              marginBottom: "0.6rem",
               color: "#fff",
             }}
           >
@@ -145,7 +146,7 @@ export default function CategoryPage() {
           </h1>
           <p
             style={{
-              fontSize: "1.1rem",
+              fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
               color: "rgba(255, 255, 255, 0.85)",
               maxWidth: "600px",
               lineHeight: 1.6,
@@ -157,16 +158,18 @@ export default function CategoryPage() {
       </section>
 
       {/* Main Content Area */}
-      <div className="container" style={{ paddingTop: "2.5rem" }}>
+      <div className="container" style={{ paddingTop: "1.75rem" }}>
         {/* Subcategories Horizontal Pills */}
         <div
+          className="no-scrollbar"
           style={{
             display: "flex",
             alignItems: "center",
             gap: "0.5rem",
             overflowX: "auto",
-            paddingBottom: "1rem",
-            marginBottom: "2rem",
+            WebkitOverflowScrolling: "touch",
+            paddingBottom: "0.75rem",
+            marginBottom: "1.5rem",
             borderBottom: "1px solid var(--border-light)",
           }}
         >
@@ -175,15 +178,16 @@ export default function CategoryPage() {
               key={sub.id}
               onClick={() => setActiveSubcategory(sub.id)}
               style={{
-                padding: "0.5rem 1.25rem",
+                padding: "0.45rem 1.15rem",
                 borderRadius: "var(--radius-full)",
-                fontSize: "0.86rem",
+                fontSize: "0.82rem",
                 fontWeight: 600,
                 whiteSpace: "nowrap",
                 border: activeSubcategory === sub.id ? "1px solid var(--accent-gold)" : "1px solid var(--border-light)",
                 background: activeSubcategory === sub.id ? "var(--text-primary)" : "var(--bg-surface)",
                 color: activeSubcategory === sub.id ? "#fff" : "var(--text-secondary)",
                 transition: "all 0.2s ease",
+                flexShrink: 0,
               }}
             >
               {sub.name}
@@ -198,34 +202,34 @@ export default function CategoryPage() {
             justifyContent: "space-between",
             alignItems: "center",
             flexWrap: "wrap",
-            gap: "1.25rem",
+            gap: "1rem",
             background: "var(--bg-surface)",
-            padding: "1rem 1.5rem",
+            padding: "0.85rem 1.25rem",
             borderRadius: "var(--radius-md)",
             border: "1px solid var(--border-light)",
             boxShadow: "var(--shadow-xs)",
-            marginBottom: "2rem",
+            marginBottom: "1.75rem",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
             <SlidersHorizontal size={18} color="var(--accent-gold)" />
-            <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-primary)" }}>
-              {filteredProducts.length} Piece{filteredProducts.length !== 1 ? "s" : ""} Available
+            <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--text-primary)" }}>
+              {filteredProducts.length} Piece{filteredProducts.length !== 1 ? "s" : ""}
             </span>
           </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", alignItems: "center", flex: "1 1 auto", justifyContent: "flex-end" }}>
             {/* Price Filter */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-              <label style={{ fontSize: "0.82rem", color: "var(--text-secondary)" }}>Price:</label>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flex: "1 1 120px" }}>
               <select
                 value={priceFilter}
                 onChange={(e) => setPriceFilter(e.target.value)}
                 style={{
-                  padding: "0.45rem 0.85rem",
+                  width: "100%",
+                  padding: "0.45rem 0.75rem",
                   borderRadius: "var(--radius-sm)",
                   border: "1px solid var(--border-light)",
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   background: "var(--bg-surface)",
                   color: "var(--text-primary)",
                   outline: "none",
@@ -240,16 +244,16 @@ export default function CategoryPage() {
             </div>
 
             {/* Material Filter */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-              <label style={{ fontSize: "0.82rem", color: "var(--text-secondary)" }}>Material:</label>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flex: "1 1 120px" }}>
               <select
                 value={materialFilter}
                 onChange={(e) => setMaterialFilter(e.target.value)}
                 style={{
-                  padding: "0.45rem 0.85rem",
+                  width: "100%",
+                  padding: "0.45rem 0.75rem",
                   borderRadius: "var(--radius-sm)",
                   border: "1px solid var(--border-light)",
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   background: "var(--bg-surface)",
                   color: "var(--text-primary)",
                   outline: "none",
@@ -265,16 +269,16 @@ export default function CategoryPage() {
             </div>
 
             {/* Sort Filter */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-              <label style={{ fontSize: "0.82rem", color: "var(--text-secondary)" }}>Sort By:</label>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flex: "1 1 120px" }}>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 style={{
-                  padding: "0.45rem 0.85rem",
+                  width: "100%",
+                  padding: "0.45rem 0.75rem",
                   borderRadius: "var(--radius-sm)",
                   border: "1px solid var(--border-light)",
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   background: "var(--bg-surface)",
                   color: "var(--text-primary)",
                   outline: "none",
@@ -294,16 +298,16 @@ export default function CategoryPage() {
           <div
             style={{
               textAlign: "center",
-              padding: "5rem 1rem",
+              padding: "4rem 1rem",
               background: "var(--bg-surface)",
               borderRadius: "var(--radius-lg)",
               border: "1px solid var(--border-light)",
             }}
           >
-            <h3 style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>
+            <h3 style={{ fontSize: "1.15rem", marginBottom: "0.5rem" }}>
               No pieces match your selected filters
             </h3>
-            <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", marginBottom: "1.5rem" }}>
+            <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", marginBottom: "1.25rem" }}>
               Try broadening your price or material selection to view more pieces.
             </p>
             <button
@@ -321,8 +325,8 @@ export default function CategoryPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "2rem",
+              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              gap: "1.25rem",
             }}
           >
             {filteredProducts.map((product) => (

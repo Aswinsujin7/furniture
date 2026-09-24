@@ -120,15 +120,8 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Main Product Section */}
-      <div className="container" style={{ paddingTop: "3rem" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-            gap: "3.5rem",
-            alignItems: "start",
-          }}
-        >
+      <div className="container" style={{ paddingTop: "1.5rem" }}>
+        <div className="product-detail-layout">
           {/* Left Media Gallery */}
           <div>
             {/* Main Stage Image */}
@@ -139,7 +132,7 @@ export default function ProductDetailPage() {
                 overflow: "hidden",
                 background: "var(--bg-secondary)",
                 boxShadow: "var(--shadow-md)",
-                marginBottom: "1rem",
+                marginBottom: "0.75rem",
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -148,7 +141,7 @@ export default function ProductDetailPage() {
                 alt={product.name}
                 style={{
                   width: "100%",
-                  height: "460px",
+                  height: "clamp(260px, 45vh, 480px)",
                   objectFit: "cover",
                   display: "block",
                   transition: "transform 0.4s ease",
@@ -159,13 +152,13 @@ export default function ProductDetailPage() {
                 <span
                   style={{
                     position: "absolute",
-                    top: "16px",
-                    left: "16px",
-                    fontSize: "0.75rem",
+                    top: "14px",
+                    left: "14px",
+                    fontSize: "0.72rem",
                     fontWeight: 600,
                     background: "var(--text-primary)",
                     color: "#fff",
-                    padding: "4px 10px",
+                    padding: "3px 8px",
                     borderRadius: "var(--radius-sm)",
                     letterSpacing: "0.5px",
                   }}
@@ -177,7 +170,16 @@ export default function ProductDetailPage() {
 
             {/* Thumbnail Strip */}
             {product.gallery && product.gallery.length > 1 && (
-              <div style={{ display: "flex", gap: "0.75rem", overflowX: "auto", paddingBottom: "0.5rem" }}>
+              <div
+                className="no-scrollbar"
+                style={{
+                  display: "flex",
+                  gap: "0.6rem",
+                  overflowX: "auto",
+                  paddingBottom: "0.5rem",
+                  WebkitOverflowScrolling: "touch",
+                }}
+              >
                 {product.gallery.map((img, i) => (
                   <button
                     key={i}
@@ -196,7 +198,7 @@ export default function ProductDetailPage() {
                     <img
                       src={img}
                       alt={`${product.name} view ${i + 1}`}
-                      style={{ width: "80px", height: "80px", objectFit: "cover", display: "block" }}
+                      style={{ width: "70px", height: "70px", objectFit: "cover", display: "block" }}
                     />
                   </button>
                 ))}
@@ -454,7 +456,7 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Add to Bag and Wishlist Actions */}
-            <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginBottom: "1.5rem" }}>
               {/* Quantity */}
               <div
                 style={{
@@ -463,11 +465,13 @@ export default function ProductDetailPage() {
                   border: "1px solid var(--border-light)",
                   borderRadius: "var(--radius-sm)",
                   background: "var(--bg-surface)",
+                  flexShrink: 0,
                 }}
               >
                 <button
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  style={{ padding: "0.8rem 1rem", fontSize: "1rem" }}
+                  style={{ padding: "0.75rem 0.9rem", fontSize: "1rem" }}
+                  aria-label="Decrease quantity"
                 >
                   -
                 </button>
@@ -476,7 +480,8 @@ export default function ProductDetailPage() {
                 </span>
                 <button
                   onClick={() => setQuantity((q) => q + 1)}
-                  style={{ padding: "0.8rem 1rem", fontSize: "1rem" }}
+                  style={{ padding: "0.75rem 0.9rem", fontSize: "1rem" }}
+                  aria-label="Increase quantity"
                 >
                   +
                 </button>
@@ -488,12 +493,13 @@ export default function ProductDetailPage() {
                 onClick={handleAddToCart}
                 style={{
                   flex: 1,
-                  padding: "0.95rem",
+                  minWidth: "200px",
+                  padding: "0.85rem 1.25rem",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "0.5rem",
-                  fontSize: "1rem",
+                  fontSize: "0.95rem",
                 }}
               >
                 <ShoppingBag size={18} />
@@ -504,7 +510,8 @@ export default function ProductDetailPage() {
               <button
                 onClick={() => toggleWishlist(product)}
                 style={{
-                  width: "50px",
+                  width: "48px",
+                  height: "48px",
                   border: "1px solid var(--border-light)",
                   borderRadius: "var(--radius-sm)",
                   display: "flex",
@@ -512,6 +519,7 @@ export default function ProductDetailPage() {
                   justifyContent: "center",
                   color: isFavorited ? "#E03131" : "var(--text-secondary)",
                   background: "var(--bg-surface)",
+                  flexShrink: 0,
                 }}
                 title={isFavorited ? "Saved in wishlist" : "Add to wishlist"}
               >
@@ -542,7 +550,7 @@ export default function ProductDetailPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
                 gap: "1rem",
                 borderTop: "1px solid var(--border-light)",
                 paddingTop: "1.5rem",
@@ -571,23 +579,29 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Tabbed Specifications & Craftsmanship Information */}
-        <div style={{ marginTop: "5rem" }}>
+        <div style={{ marginTop: "3.5rem" }}>
           <div
+            className="no-scrollbar"
             style={{
               display: "flex",
               borderBottom: "1px solid var(--border-light)",
-              gap: "2rem",
-              marginBottom: "2rem",
+              gap: "1.5rem",
+              overflowX: "auto",
+              whiteSpace: "nowrap",
+              WebkitOverflowScrolling: "touch",
+              marginBottom: "1.5rem",
+              paddingBottom: "0.25rem",
             }}
           >
             <button
               onClick={() => setActiveTab("features")}
               style={{
-                padding: "0.75rem 0",
-                fontSize: "1rem",
+                padding: "0.65rem 0",
+                fontSize: "0.95rem",
                 fontWeight: 600,
                 borderBottom: activeTab === "features" ? "2px solid var(--accent-gold)" : "2px solid transparent",
                 color: activeTab === "features" ? "var(--text-primary)" : "var(--text-secondary)",
+                flexShrink: 0,
               }}
             >
               Handcrafted Features
@@ -596,11 +610,12 @@ export default function ProductDetailPage() {
             <button
               onClick={() => setActiveTab("specs")}
               style={{
-                padding: "0.75rem 0",
-                fontSize: "1rem",
+                padding: "0.65rem 0",
+                fontSize: "0.95rem",
                 fontWeight: 600,
                 borderBottom: activeTab === "specs" ? "2px solid var(--accent-gold)" : "2px solid transparent",
                 color: activeTab === "specs" ? "var(--text-primary)" : "var(--text-secondary)",
+                flexShrink: 0,
               }}
             >
               Technical Specifications
@@ -609,11 +624,12 @@ export default function ProductDetailPage() {
             <button
               onClick={() => setActiveTab("warranty")}
               style={{
-                padding: "0.75rem 0",
-                fontSize: "1rem",
+                padding: "0.65rem 0",
+                fontSize: "0.95rem",
                 fontWeight: 600,
                 borderBottom: activeTab === "warranty" ? "2px solid var(--accent-gold)" : "2px solid transparent",
                 color: activeTab === "warranty" ? "var(--text-primary)" : "var(--text-secondary)",
+                flexShrink: 0,
               }}
             >
               Warranty & White-Glove Care
@@ -623,7 +639,7 @@ export default function ProductDetailPage() {
           <div
             style={{
               background: "var(--bg-surface)",
-              padding: "2.5rem",
+              padding: "clamp(1.25rem, 3vw, 2.5rem)",
               borderRadius: "var(--radius-lg)",
               border: "1px solid var(--border-light)",
             }}
@@ -632,23 +648,23 @@ export default function ProductDetailPage() {
               <div>
                 <p
                   style={{
-                    fontSize: "1.05rem",
+                    fontSize: "1rem",
                     lineHeight: 1.7,
                     color: "var(--text-secondary)",
-                    marginBottom: "2rem",
+                    marginBottom: "1.75rem",
                   }}
                 >
                   {product.description}
                 </p>
 
-                <h3 style={{ fontSize: "1.15rem", fontWeight: 600, marginBottom: "1rem" }}>
+                <h3 style={{ fontSize: "1.1rem", fontWeight: 600, marginBottom: "1rem" }}>
                   Signature Atelier Highlights
                 </h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "0.85rem" }}>
                   {product.features.map((feat, i) => (
                     <div key={i} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
                       <CheckCircle2 size={18} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: "2px" }} />
-                      <span style={{ fontSize: "0.92rem", color: "var(--text-primary)" }}>{feat}</span>
+                      <span style={{ fontSize: "0.9rem", color: "var(--text-primary)" }}>{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -656,14 +672,14 @@ export default function ProductDetailPage() {
             )}
 
             {activeTab === "specs" && (
-              <div>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.92rem" }}>
+              <div style={{ overflowX: "auto" }}>
+                <table style={{ width: "100%", minWidth: "280px", borderCollapse: "collapse", fontSize: "0.9rem" }}>
                   <tbody>
                     <tr style={{ borderBottom: "1px solid var(--border-light)" }}>
-                      <td style={{ padding: "0.85rem 0", color: "var(--text-secondary)", width: "35%" }}>
+                      <td style={{ padding: "0.75rem 0", color: "var(--text-secondary)", width: "40%" }}>
                         Primary Material
                       </td>
-                      <td style={{ padding: "0.85rem 0", fontWeight: 600 }}>{product.material}</td>
+                      <td style={{ padding: "0.75rem 0", fontWeight: 600 }}>{product.material}</td>
                     </tr>
                     <tr style={{ borderBottom: "1px solid var(--border-light)" }}>
                       <td style={{ padding: "0.85rem 0", color: "var(--text-secondary)" }}>Dimensions</td>
@@ -763,6 +779,42 @@ export default function ProductDetailPage() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Sticky Mobile Purchase Bar */}
+      <div className="sticky-mobile-buy-bar">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", minWidth: 0, flex: 1 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={product.primaryImage}
+            alt=""
+            style={{ width: "42px", height: "42px", objectFit: "cover", borderRadius: "var(--radius-sm)", flexShrink: 0 }}
+          />
+          <div style={{ minWidth: 0 }}>
+            <div style={{ fontSize: "0.8rem", fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", color: "var(--text-primary)" }}>
+              {product.name}
+            </div>
+            <div style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-primary)" }}>
+              {formatCurrency(product.price)}
+            </div>
+          </div>
+        </div>
+        <button
+          className="btn-primary"
+          onClick={handleAddToCart}
+          style={{
+            padding: "0.55rem 1.15rem",
+            fontSize: "0.85rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            flexShrink: 0,
+            boxShadow: "var(--shadow-sm)",
+          }}
+        >
+          <ShoppingBag size={16} />
+          <span>Add</span>
+        </button>
       </div>
 
       {/* Quick View Modal */}

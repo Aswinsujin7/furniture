@@ -85,26 +85,26 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             overflowY: "auto",
           }}
         >
           {/* Gallery Column */}
-          <div style={{ padding: "1.5rem", background: "var(--bg-secondary)" }}>
+          <div style={{ padding: "clamp(1rem, 2.5vw, 1.5rem)", background: "var(--bg-secondary)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={currentImage}
               alt={product.name}
               style={{
                 width: "100%",
-                height: "340px",
+                height: "clamp(220px, 35vh, 340px)",
                 objectFit: "cover",
                 borderRadius: "var(--radius-md)",
-                marginBottom: "1rem",
+                marginBottom: "0.75rem",
               }}
             />
             {product.gallery && product.gallery.length > 1 && (
-              <div style={{ display: "flex", gap: "0.5rem", overflowX: "auto" }}>
+              <div className="no-scrollbar" style={{ display: "flex", gap: "0.5rem", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
                 {product.gallery.map((img, i) => (
                   <button
                     key={i}
@@ -121,7 +121,7 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
                     <img
                       src={img}
                       alt=""
-                      style={{ width: "60px", height: "60px", objectFit: "cover" }}
+                      style={{ width: "54px", height: "54px", objectFit: "cover" }}
                     />
                   </button>
                 ))}
@@ -130,7 +130,7 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
           </div>
 
           {/* Details Column */}
-          <div style={{ padding: "2rem", display: "flex", flexDirection: "column" }}>
+          <div style={{ padding: "clamp(1.25rem, 3vw, 2rem)", display: "flex", flexDirection: "column" }}>
             {product.badge && (
               <span
                 style={{

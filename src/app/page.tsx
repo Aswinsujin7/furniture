@@ -36,7 +36,7 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          padding: "4rem 0 5rem",
+          padding: "clamp(2.5rem, 5vw, 4rem) 0 clamp(3rem, 5vw, 5rem)",
           background: "linear-gradient(180deg, #FAF8F5 0%, #F3EFEA 100%)",
           position: "relative",
           overflow: "hidden",
@@ -46,8 +46,8 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "3.5rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "2.5rem",
               alignItems: "center",
             }}
           >
@@ -60,13 +60,13 @@ export default function HomePage() {
                   gap: "0.5rem",
                   background: "var(--accent-gold-light)",
                   color: "var(--accent-gold-hover)",
-                  padding: "0.35rem 0.9rem",
+                  padding: "0.35rem 0.85rem",
                   borderRadius: "var(--radius-full)",
-                  fontSize: "0.78rem",
+                  fontSize: "0.75rem",
                   fontWeight: 600,
                   letterSpacing: "0.8px",
                   textTransform: "uppercase",
-                  marginBottom: "1.5rem",
+                  marginBottom: "1.25rem",
                 }}
               >
                 <Sparkles size={14} />
@@ -76,8 +76,8 @@ export default function HomePage() {
               <h1
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 5vw, 4.2rem)",
-                  lineHeight: 1.12,
+                  fontSize: "clamp(2.2rem, 5vw, 4rem)",
+                  lineHeight: 1.15,
                   fontWeight: 600,
                   color: "var(--text-primary)",
                   marginBottom: "1.25rem",
@@ -88,10 +88,10 @@ export default function HomePage() {
 
               <p
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
                   color: "var(--text-secondary)",
                   lineHeight: 1.65,
-                  marginBottom: "2rem",
+                  marginBottom: "1.75rem",
                 }}
               >
                 Artisanal Solid Teak, seasoned Indian Sheesham, and Italian upholstery tailored to
@@ -103,19 +103,21 @@ export default function HomePage() {
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
-                  gap: "1rem",
-                  marginBottom: "2.5rem",
+                  gap: "0.75rem",
+                  marginBottom: "2rem",
                 }}
               >
                 <Link
                   href="/category/sofas"
                   className="btn-primary"
                   style={{
-                    padding: "0.95rem 2rem",
-                    fontSize: "0.95rem",
+                    padding: "0.85rem 1.75rem",
+                    fontSize: "0.92rem",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.5rem",
+                    flex: "1 1 auto",
+                    justifyContent: "center",
                   }}
                 >
                   <span>Explore Living Room</span>
@@ -126,11 +128,13 @@ export default function HomePage() {
                   onClick={() => setIsConciergeOpen(true)}
                   className="btn-outline"
                   style={{
-                    padding: "0.95rem 1.75rem",
-                    fontSize: "0.95rem",
+                    padding: "0.85rem 1.5rem",
+                    fontSize: "0.92rem",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.5rem",
+                    flex: "1 1 auto",
+                    justifyContent: "center",
                   }}
                 >
                   <Calendar size={18} />
@@ -142,27 +146,27 @@ export default function HomePage() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-                  gap: "1.25rem",
-                  paddingTop: "1.5rem",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+                  gap: "1rem",
+                  paddingTop: "1.25rem",
                   borderTop: "1px solid var(--border-light)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <ShieldCheck size={20} color="var(--accent-gold)" />
-                  <span style={{ fontSize: "0.82rem", fontWeight: 600 }}>10-Yr Warranty</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                  <ShieldCheck size={18} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>10-Yr Warranty</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <Truck size={20} color="var(--accent-gold)" />
-                  <span style={{ fontSize: "0.82rem", fontWeight: 600 }}>Free Setup</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                  <Truck size={18} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>Free Setup</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <Award size={20} color="var(--accent-gold)" />
-                  <span style={{ fontSize: "0.82rem", fontWeight: 600 }}>Solid Hardwood</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                  <Award size={18} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>Solid Hardwood</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <Compass size={20} color="var(--accent-gold)" />
-                  <span style={{ fontSize: "0.82rem", fontWeight: 600 }}>Custom Blueprints</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
+                  <Compass size={18} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>Custom Blueprints</span>
                 </div>
               </div>
             </div>
@@ -183,7 +187,7 @@ export default function HomePage() {
                   alt="Verona Atelier Living Space"
                   style={{
                     width: "100%",
-                    height: "480px",
+                    height: "clamp(260px, 45vh, 480px)",
                     objectFit: "cover",
                     display: "block",
                   }}
@@ -194,23 +198,23 @@ export default function HomePage() {
               <div
                 style={{
                   position: "absolute",
-                  bottom: "-20px",
-                  left: "20px",
+                  bottom: "-12px",
+                  left: "12px",
                   background: "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(12px)",
-                  padding: "1rem 1.25rem",
-                  borderRadius: "var(--radius-lg)",
+                  padding: "0.75rem 1rem",
+                  borderRadius: "var(--radius-md)",
                   boxShadow: "var(--shadow-lg)",
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.75rem",
-                  maxWidth: "280px",
+                  gap: "0.6rem",
+                  maxWidth: "clamp(220px, 60%, 280px)",
                 }}
               >
                 <div
                   style={{
-                    width: "42px",
-                    height: "42px",
+                    width: "36px",
+                    height: "36px",
                     borderRadius: "50%",
                     background: "var(--accent-gold-light)",
                     display: "flex",
@@ -220,13 +224,13 @@ export default function HomePage() {
                     flexShrink: 0,
                   }}
                 >
-                  <Award size={22} />
+                  <Award size={18} />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--text-tertiary)" }}>
+                  <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--text-tertiary)" }}>
                     Signature Series
                   </div>
-                  <div style={{ fontSize: "0.92rem", fontWeight: 600 }}>
+                  <div style={{ fontSize: "0.85rem", fontWeight: 600 }}>
                     Solid Teak & Bouclé
                   </div>
                 </div>
@@ -236,23 +240,23 @@ export default function HomePage() {
               <div
                 style={{
                   position: "absolute",
-                  top: "20px",
-                  right: "20px",
+                  top: "14px",
+                  right: "14px",
                   background: "rgba(20, 18, 16, 0.88)",
                   backdropFilter: "blur(12px)",
                   color: "#fff",
-                  padding: "0.6rem 1rem",
+                  padding: "0.45rem 0.85rem",
                   borderRadius: "var(--radius-full)",
                   boxShadow: "var(--shadow-lg)",
                   display: "flex",
                   alignItems: "center",
                   gap: "0.4rem",
-                  fontSize: "0.82rem",
+                  fontSize: "0.76rem",
                   fontWeight: 600,
                 }}
               >
-                <Star size={14} fill="#B88E4F" color="#B88E4F" />
-                <span>4.9 / 5.0 Rating (1,400+ Residences)</span>
+                <Star size={13} fill="#B88E4F" color="#B88E4F" />
+                <span>4.9 ★ (1,400+ Homes)</span>
               </div>
             </div>
           </div>
@@ -262,9 +266,9 @@ export default function HomePage() {
       {/* ======================================================================
           CURATED ROOMS & LIVING SPACES
           ====================================================================== */}
-      <section style={{ padding: "6rem 0 4rem" }}>
+      <section style={{ padding: "clamp(3rem, 5vw, 5rem) 0 2.5rem" }}>
         <div className="container">
-          <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3.5rem" }}>
+          <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 2.5rem" }}>
             <span
               style={{
                 fontSize: "0.8rem",
@@ -273,7 +277,7 @@ export default function HomePage() {
                 color: "var(--accent-gold)",
                 fontWeight: 600,
                 display: "block",
-                marginBottom: "0.5rem",
+                marginBottom: "0.4rem",
               }}
             >
               Curated Collections
@@ -281,14 +285,14 @@ export default function HomePage() {
             <h2
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
+                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
                 fontWeight: 600,
-                marginBottom: "0.75rem",
+                marginBottom: "0.6rem",
               }}
             >
               Architectural Living Spaces
             </h2>
-            <p style={{ color: "var(--text-secondary)", fontSize: "1rem" }}>
+            <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem" }}>
               Explore bespoke furniture tailored for every room of your sanctuary.
             </p>
           </div>
@@ -296,8 +300,8 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "1.75rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "1.25rem",
             }}
           >
             {CATEGORIES.map((cat) => (
@@ -308,16 +312,16 @@ export default function HomePage() {
                   position: "relative",
                   borderRadius: "var(--radius-lg)",
                   overflow: "hidden",
-                  height: "360px",
+                  height: "clamp(260px, 35vh, 340px)",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
-                  padding: "1.75rem",
+                  padding: "1.5rem",
                   boxShadow: "var(--shadow-md)",
                   transition: "transform 0.35s ease, box-shadow 0.35s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-6px)";
+                  e.currentTarget.style.transform = "translateY(-4px)";
                   e.currentTarget.style.boxShadow = "var(--shadow-xl)";
                 }}
                 onMouseLeave={(e) => {
@@ -353,11 +357,11 @@ export default function HomePage() {
                 <div style={{ position: "relative", zIndex: 3, color: "#fff" }}>
                   <div
                     style={{
-                      fontSize: "0.75rem",
+                      fontSize: "0.72rem",
                       textTransform: "uppercase",
                       letterSpacing: "1px",
                       color: "var(--accent-gold-light)",
-                      marginBottom: "0.3rem",
+                      marginBottom: "0.25rem",
                     }}
                   >
                     {cat.subcategories.length - 1} Variations
@@ -365,19 +369,19 @@ export default function HomePage() {
                   <h3
                     style={{
                       fontFamily: "var(--font-serif)",
-                      fontSize: "1.8rem",
+                      fontSize: "1.6rem",
                       fontWeight: 600,
-                      marginBottom: "0.4rem",
+                      marginBottom: "0.3rem",
                     }}
                   >
                     {cat.name}
                   </h3>
                   <p
                     style={{
-                      fontSize: "0.85rem",
+                      fontSize: "0.82rem",
                       color: "rgba(255, 255, 255, 0.8)",
                       lineHeight: 1.4,
-                      marginBottom: "0.75rem",
+                      marginBottom: "0.6rem",
                     }}
                   >
                     {cat.tagline}
@@ -387,7 +391,7 @@ export default function HomePage() {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "0.4rem",
-                      fontSize: "0.82rem",
+                      fontSize: "0.8rem",
                       fontWeight: 600,
                       color: "var(--accent-gold)",
                     }}
@@ -405,7 +409,7 @@ export default function HomePage() {
       {/* ======================================================================
           MASTERPIECES SHOWCASE (TABS & PRODUCT GRID)
           ====================================================================== */}
-      <section style={{ padding: "5rem 0", background: "var(--bg-secondary)" }}>
+      <section style={{ padding: "clamp(3.5rem, 5vw, 5rem) 0", background: "var(--bg-secondary)" }}>
         <div className="container">
           <div
             style={{
@@ -413,8 +417,8 @@ export default function HomePage() {
               justifyContent: "space-between",
               alignItems: "flex-end",
               flexWrap: "wrap",
-              gap: "1.5rem",
-              marginBottom: "2.5rem",
+              gap: "1.25rem",
+              marginBottom: "2rem",
             }}
           >
             <div>
@@ -426,7 +430,7 @@ export default function HomePage() {
                   color: "var(--accent-gold)",
                   fontWeight: 600,
                   display: "block",
-                  marginBottom: "0.4rem",
+                  marginBottom: "0.3rem",
                 }}
               >
                 Signature Portfolio
@@ -434,7 +438,7 @@ export default function HomePage() {
               <h2
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2rem, 3.5vw, 2.6rem)",
+                  fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
                   fontWeight: 600,
                 }}
               >
@@ -442,16 +446,20 @@ export default function HomePage() {
               </h2>
             </div>
 
-            {/* Filter Tabs */}
+            {/* Filter Tabs - Horizontal Scroll on Mobile */}
             <div
+              className="no-scrollbar"
               style={{
                 display: "flex",
-                flexWrap: "wrap",
-                gap: "0.5rem",
+                overflowX: "auto",
+                whiteSpace: "nowrap",
+                WebkitOverflowScrolling: "touch",
+                gap: "0.4rem",
                 background: "var(--bg-surface)",
-                padding: "6px",
+                padding: "4px 6px",
                 borderRadius: "var(--radius-full)",
                 border: "1px solid var(--border-light)",
+                maxWidth: "100%",
               }}
             >
               {[
@@ -465,13 +473,14 @@ export default function HomePage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   style={{
-                    padding: "0.45rem 1.15rem",
+                    padding: "0.4rem 1rem",
                     borderRadius: "var(--radius-full)",
-                    fontSize: "0.85rem",
+                    fontSize: "0.82rem",
                     fontWeight: 600,
                     background: activeTab === tab.id ? "var(--text-primary)" : "transparent",
                     color: activeTab === tab.id ? "#fff" : "var(--text-secondary)",
                     transition: "all 0.2s ease",
+                    flexShrink: 0,
                   }}
                 >
                   {tab.label}
@@ -484,8 +493,8 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "2rem",
+              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              gap: "1.25rem",
             }}
           >
             {filteredProducts.map((product) => (
@@ -497,11 +506,11 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
+          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
             <Link
               href="/category/sofas"
               className="btn-primary"
-              style={{ padding: "0.9rem 2.25rem", fontSize: "0.95rem" }}
+              style={{ padding: "0.85rem 2rem", fontSize: "0.92rem" }}
             >
               View Full 2026 Catalogue
             </Link>
