@@ -550,7 +550,7 @@ export default function ProductDetailPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
                 gap: "1rem",
                 borderTop: "1px solid var(--border-light)",
                 paddingTop: "1.5rem",
@@ -660,7 +660,7 @@ export default function ProductDetailPage() {
                 <h3 style={{ fontSize: "1.1rem", fontWeight: 600, marginBottom: "1rem" }}>
                   Signature Atelier Highlights
                 </h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "0.85rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "0.85rem" }}>
                   {product.features.map((feat, i) => (
                     <div key={i} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
                       <CheckCircle2 size={18} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -765,7 +765,7 @@ export default function ProductDetailPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))",
                 gap: "2rem",
               }}
             >

@@ -156,7 +156,7 @@ export default function Header() {
 
               {/* Wishlist Trigger */}
               <button
-                className="action-btn"
+                className="action-btn desktop-header-action"
                 onClick={() => setIsWishlistOpen(true)}
                 title="Saved Items"
                 aria-label="Wishlist"

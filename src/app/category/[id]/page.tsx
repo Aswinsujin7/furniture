@@ -325,7 +325,7 @@ export default function CategoryPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 240px), 1fr))",
               gap: "1.25rem",
             }}
           >

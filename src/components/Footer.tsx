@@ -35,7 +35,7 @@ export default function Footer() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
               gap: "2rem",
             }}
           >
@@ -136,7 +136,7 @@ export default function Footer() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               gap: "3rem",
             }}
           >
@@ -299,6 +299,7 @@ export default function Footer() {
                       padding: "0.75rem 1rem",
                       fontSize: "0.88rem",
                       flex: 1,
+                      minWidth: 0,
                       outline: "none",
                     }}
                   />

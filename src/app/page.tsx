@@ -46,13 +46,13 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
               gap: "2.5rem",
               alignItems: "center",
             }}
           >
             {/* Left Content */}
-            <div style={{ maxWidth: "600px" }}>
+            <div style={{ maxWidth: "600px", minWidth: 0, width: "100%" }}>
               <div
                 style={{
                   display: "inline-flex",
@@ -76,11 +76,13 @@ export default function HomePage() {
               <h1
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 5vw, 4rem)",
+                  fontSize: "clamp(1.85rem, 5vw, 3.8rem)",
                   lineHeight: 1.15,
                   fontWeight: 600,
                   color: "var(--text-primary)",
                   marginBottom: "1.25rem",
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
                 }}
               >
                 Handcrafted Elegance for Contemporary Sanctuaries
@@ -88,7 +90,7 @@ export default function HomePage() {
 
               <p
                 style={{
-                  fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
+                  fontSize: "clamp(0.92rem, 2vw, 1.05rem)",
                   color: "var(--text-secondary)",
                   lineHeight: 1.65,
                   marginBottom: "1.75rem",
@@ -105,6 +107,7 @@ export default function HomePage() {
                   flexWrap: "wrap",
                   gap: "0.75rem",
                   marginBottom: "2rem",
+                  width: "100%",
                 }}
               >
                 <Link
@@ -144,10 +147,8 @@ export default function HomePage() {
 
               {/* Trust Badges Bar */}
               <div
+                className="hero-trust-grid"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-                  gap: "1rem",
                   paddingTop: "1.25rem",
                   borderTop: "1px solid var(--border-light)",
                 }}
@@ -172,7 +173,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Media Hero Banner */}
-            <div style={{ position: "relative" }}>
+            <div style={{ position: "relative", width: "100%", maxWidth: "100%", overflow: "hidden", borderRadius: "var(--radius-xl)" }}>
               <div
                 style={{
                   borderRadius: "var(--radius-xl)",
@@ -198,7 +199,7 @@ export default function HomePage() {
               <div
                 style={{
                   position: "absolute",
-                  bottom: "-12px",
+                  bottom: "12px",
                   left: "12px",
                   background: "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(12px)",
@@ -208,7 +209,7 @@ export default function HomePage() {
                   display: "flex",
                   alignItems: "center",
                   gap: "0.6rem",
-                  maxWidth: "clamp(220px, 60%, 280px)",
+                  maxWidth: "calc(100% - 24px)",
                 }}
               >
                 <div
@@ -300,7 +301,7 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
               gap: "1.25rem",
             }}
           >
@@ -493,7 +494,7 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 240px), 1fr))",
               gap: "1.25rem",
             }}
           >
@@ -556,7 +557,7 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
               gap: "2rem",
             }}
           >
@@ -695,7 +696,7 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
               gap: "3rem",
               alignItems: "center",
             }}
